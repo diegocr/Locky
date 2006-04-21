@@ -1,0 +1,32 @@
+
+Briefly, this program can be used to localize your software. It traverses
+recursively over all of your project folders reading C/C++ source-code
+files and replacing readable strings with macros whose definitions are
+placed on newly created locale.c and locale.h files.
+
+It is mainly intended to create .cd, .ct, and .catalog files for AmigaOS
+
+Usage: Locky -c CDFILE [options]
+Options:
+  -h            This help message
+  -c<catalog>   Catalog descriptor file (REQUIRED)
+  -t<tree>      Read sources from <tree> path
+  -r            Do recursive scan to get sources while using -t
+  -i<pattern>   do not recurse into subdirs matching <pattern>, implies -r
+  -p<pattern>   Use <pattern> to source files [#?.(c|h)]
+  -f<file>      Localize <file> only.
+  -l<locale>    load/save locatized string from/to <locale> path
+  -s<pattern>   Only localize strings which match with <pattern>
+  -m<value>     Only localize strings which length is greater than <value>
+  -b            Check for minstrlen (-m) on the string before localizing it
+  -j            Skip all kind of scape sequences and formating tags while using -b
+  -a            Count alpha-numeric chars only, upto -m, while using -b
+  -g<value>     Maximun length of MSG_#? strings. (default: %d)\n", MSG_MAXLENGTH );
+  -o<pattern>   Do not localize files which match with <pattern>.(c|h)
+  -n            localize all strings even if duplicated
+  -u            Convert localized MSG_#? strings to uppercase (implies -n)
+  -x<func,func> Comma separated list of functions whose strings get not localized
+  -e            Encode build-in language strings...
+  -d            Print debugging messages
+  -V            print version info.
+
